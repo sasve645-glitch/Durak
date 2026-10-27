@@ -13,8 +13,8 @@ jobs:
 
       - name: Unzip app
         run: |
-          if [ -f durak-app.zip ]; then unzip -o durak-app.zip; fi
-          ls -la
+          unzip -o durak-app.zip
+          find . -maxdepth 3 -not -path './.git/*' -not -path './node_modules/*'
 
       - uses: actions/setup-node@v4
         with:
